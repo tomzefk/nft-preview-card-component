@@ -1,38 +1,156 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: 'Outfit', sans-serif;
+  display: grid;
+  place-items: center;
+  width: 100vw;
   min-height: 100vh;
+  background-color: hsl(217, 54%, 11%);
+}
+
+.nftWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* gap: 20px; */
+  width: 290px;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 24px 0px #00000020;
+  background-color: hsl(216, 50%, 16%);
 }
 
-.App-link {
-  color: #61dafb;
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  background: hsl(178, 100%, 50%);
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.imageWrapper:hover {
+  cursor: pointer;
+}
+.imageWrapper:hover .nftImage {
+  opacity: 0.4;
+}
+.imageWrapper:hover .viewIcon {
+  opacity: 1;
+}
+
+.nftImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.3s;
+  backface-visibility: hidden;
+}
+
+.viewIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 21.5px;
+  color: hsl(0, 0%, 100%);
+  transition: color 0.3s;
+}
+.title:hover {
+  cursor: pointer;
+  color: hsl(178, 100%, 50%)
+}
+
+.text {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: hsl(215, 51%, 70%);
+}
+
+.nftInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: blue; */
+}
+
+h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  /* background-color: red; */
+}
+.price img {
+  max-width: 32px;
+  object-fit: contain;
+}
+.price h4 {
+  color: hsl(178, 100%, 50%);
+}
+
+
+.timeleft {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  /* background-color: green; */
+}
+.timeleft img {
+  max-width: 32px;
+  object-fit: contain;
+}
+.timeleft h4 {
+  font-weight: 400;
+  color: hsl(215, 51%, 70%);
+}
+
+.creator {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid hsl(215, 32%, 27%);
+  /* background-color: red; */
+}
+.creator img {
+  max-width: 28px;
+  object-fit: contain;
+  border-radius: 50px;
+  border: 1px solid #fff;
+}
+.creator p {
+  margin: 0;
+  color: hsl(215, 51%, 70%);
+}
+.creator p span {
+  color: hsl(0, 0%, 100%);
+  transition: color 0.3s;
+}
+.creator p span:hover {
+  cursor: pointer;
+  color: hsl(178, 100%, 50%)
 }
